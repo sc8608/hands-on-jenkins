@@ -1,5 +1,8 @@
 from flask import Flask, render_template
 import random
+from jinja2.utils import markupsafe
+from markupsafe import Markup
+
 
 app = Flask(__name__)
 
