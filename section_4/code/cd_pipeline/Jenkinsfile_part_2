@@ -79,5 +79,6 @@ def runUnittests() {
 
 
 def runUAT(port) {
+	sh "export no_proxy='localhost,127.0.0.1,192.168.101.123'"
 	sh "section_4/code/cd_pipeline/tests/runUAT.sh ${port}"
 }
