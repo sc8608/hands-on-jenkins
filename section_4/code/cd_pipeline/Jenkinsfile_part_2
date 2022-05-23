@@ -9,6 +9,7 @@ pipeline {
 
 	environment {
 		PYTHONPATH = "${WORKSPACE}/section_4/code/cd_pipeline"
+		NO_PROXY="localhost,127.0.0.1,192.168.101.123"
 	}
 
 	stages {
@@ -79,6 +80,6 @@ def runUnittests() {
 
 
 def runUAT(port) {
-	sh "export no_proxy='localhost,127.0.0.1,192.168.101.123'"
+	sh "printenv"
 	sh "section_4/code/cd_pipeline/tests/runUAT.sh ${port}"
 }
