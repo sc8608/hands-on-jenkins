@@ -4,6 +4,7 @@ import sys
 import os
 import unittest
 import app
+from jinja2.utils import markupsafe markupsafe.Markup() Markup('')
 
 class BasicTests(unittest.TestCase):
 
