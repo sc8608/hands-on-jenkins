@@ -1,5 +1,3 @@
-from jinja2.utils import markupsafe
-from markupsafe import Markup
 from flask import Flask, render_template
 import random
 
