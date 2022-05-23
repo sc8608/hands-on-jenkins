@@ -9,6 +9,7 @@ pipeline {
 
 	environment {
 		PYTHONPATH = "${WORKSPACE}/section_4/code/cd_pipeline"
+		NO_PROXY="localhost,127.0.0.1,192.168.101.123"
 	}
 
     stages {
@@ -56,7 +57,8 @@ pipeline {
 // steps
 def buildApp() {
 	dir ('section_4/code/cd_pipeline' ) {
-		def appImage = docker.build("hands-on-jenkins/myapp:${BUILD_NUMBER}")
+		//def appImage = docker.build("hands-on-jenkins/myapp:${BUILD_NUMBER}")
+		sh "docker build --build-arg http_proxy=http://10.51.8.101:8080 -t hands-on-jenkins/myapp:${BUILD_NUMBER} ."
 	}
 }
 
